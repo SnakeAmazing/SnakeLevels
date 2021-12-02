@@ -1,0 +1,44 @@
+messages:
+  commands:
+    help:
+      - "&7"
+      - "         &e&lSNAKE LEVELS"
+      - " &7· &f/snakelevels give <player> <amount>"
+      - " &7· &f/snakelevels remove <player> <amount>"
+      - " &7· &f/snakelevels reset <player>"
+      - "&7"
+    give:
+      sender: "&e&lNIVELES &7» &aHas dado a &6%target% &e%amount% &apuntos."
+      target: "&e&lNIVELES &7» &aHas recibido &e%amount% &apuntos."
+    remove:
+      sender: "&e&lNIVELES &7» &aHas quitado a &6%target% &e%amount% &apuntos."
+      target: "&e&lNIVELES &7» &aTe han quitado &e%amount% &apuntos."
+    set:
+      sender: "&e&lNIVELES &7» &aHas establecido el nivel de &6%target% a &e%level%&a."
+      target: "&e&lNIVELES &7» &aTe han establecido el nivel a &e%level%&a."
+
+
+  level-update: "&e&lNIVELES &7» &b%xp%&7/&b%next-level-xp%"
+  level-up:
+    max-level: "&e&lNIVELES &7» &c¡Has llegado al nivel máximo!"
+    level-1:
+      - "&7"
+      - "&e&l             NIVELES"
+      - "&f    ¡Feliciades! Has subido de nivel."
+      - ""
+      - "  &fNuevo nivel: &a1"
+      - "   &e➥ &e"
+    level-2:
+      - "&7"
+      - "&e&l             NIVELES"
+      - "&f    ¡Feliciades! Has subido de nivel."
+      - ""
+      - "  &fNuevo nivel: &a2"
+      - "   &e➥ &e"
+    level-3:
+      - "&7"
+      - "&e&l             NIVELES"
+      - "&f    ¡Feliciades! Has subido de nivel."
+      - ""
+      - "  &fNuevo nivel: &a3"
+      - "   &e➥ &e"

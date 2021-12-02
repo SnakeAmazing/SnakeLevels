@@ -1,0 +1,18 @@
+settings:
+  max-level: 25
+  material:
+    - COAL_ORE
+    - IRON_ORE
+    - GOLD_ORE
+    - EMERALD_ORE
+    - DIAMOND_ORE
+    - STONE
+    - ANCIENT_DEBRIS
+
+  killing-xp: 3
+  fishing-xp: 5
+  mining-xp: 1
+
+exp:
+  multiplier-min: 100
+  multiplier-max: 200
