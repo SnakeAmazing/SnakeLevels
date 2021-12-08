@@ -2,6 +2,7 @@ package me.snakeamazing.snakelevels.commands;
 
 import me.fixeddev.commandflow.annotated.CommandClass;
 import me.fixeddev.commandflow.annotated.annotation.Command;
+import me.fixeddev.commandflow.annotated.annotation.SubCommandClasses;
 import me.fixeddev.commandflow.bukkit.annotation.Sender;
 import me.snakeamazing.snakelevels.file.FileMatcher;
 import me.snakeamazing.snakelevels.file.YAMLFile;
@@ -9,6 +10,9 @@ import me.snakeamazing.snakelevels.manager.LevelManager;
 import org.bukkit.entity.Player;
 
 @Command(names = {"snakelevels", "sl"}, permission = "snakelevels.admin")
+//@SubCommandClasses({
+//        ReloadCommand.class
+//})
 public class LevelCommand implements CommandClass {
 
     private final LevelManager levelManager;

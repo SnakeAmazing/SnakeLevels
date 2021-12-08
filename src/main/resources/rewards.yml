@@ -1,75 +1,76 @@
 1:
   commands:
-    - "broadcast &a&ltest"
+    - "eco give %player% 1000"
 2:
   commands:
-    -
+    - "eco give %player% 1000"
 3:
   commands:
-    -
+    - "eco give %player% 1000"
+    - "lp user %player% permission set simpleportals.portal.nether_portal server=survival"
 4:
   commands:
-    -
+    - "eco give %player% 1000"
 5:
   commands:
-    -
+    - "eco give %player% 5000"
 6:
   commands:
-    -
+    - "eco give %player% 1000"
 7:
   commands:
-    -
+    - "eco give %player% 1000"
 8:
   commands:
-    -
+    - "eco give %player% 1000"
 9:
   commands:
-    -
+    - "eco give %player% 1000"
 10:
   commands:
-    -
+    - "eco give %player% 5000"
 11:
   commands:
-    -
+    - "eco give %player% 1000"
 12:
   commands:
-    -
+    - "eco give %player% 1000"
 13:
   commands:
-    -
+    - "eco give %player% 1000"
 14:
   commands:
-    -
+    - "eco give %player% 1000"
 15:
   commands:
-    -
+    - "eco give %player% 5000"
 16:
   commands:
-    -
+    - "eco give %player% 1000"
 17:
   commands:
-    -
+    - "eco give %player% 1000"
 18:
   commands:
-    -
+    - "eco give %player% 1000"
 19:
   commands:
-    -
+    - "eco give %player% 1000"
 20:
   commands:
-    -
+    - "eco give %player% 5000"
 21:
   commands:
-    -
+    - "eco give %player% 1000"
 22:
   commands:
-    -
+    - "eco give %player% 1000"
 23:
   commands:
-    -
+    - "eco give %player% 1000"
 24:
   commands:
-    -
+    - "eco give %player% 1000"
 25:
   commands:
-    -
+    - "eco give %player% 5000"

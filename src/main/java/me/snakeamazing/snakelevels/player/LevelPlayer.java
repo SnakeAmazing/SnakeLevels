@@ -4,7 +4,7 @@ public class LevelPlayer {
 
     private final String name;
     private int level;
-    private int xp;
+    private double xp;
     private int xpToNextLevel;
 
     private double multiplier;
@@ -14,15 +14,15 @@ public class LevelPlayer {
         this.name = name;
         this.level = 1;
         this.xp = 0;
-        this.multiplier = 1;
+        this.multiplier = 1.0;
     }
 
-    public LevelPlayer(String name, int level, int xp, int xpToNextLevel, double multiplier) {
+    public LevelPlayer(String name, int level, double xp, int xpToNextLevel, double multiplier) {
         this.name = name;
         this.level = level;
         this.xp = xp;
         this.xpToNextLevel = xpToNextLevel;
-        this.multiplier = 1;
+        this.multiplier = multiplier;
     }
 
     public String getName() {
@@ -37,19 +37,19 @@ public class LevelPlayer {
         this.level = level;
     }
 
-    public void addLevel(double amount) {
-        this.level += level;
+    public void addLevel(int amount) {
+        this.level += amount;
     }
 
     public void removeLevel(int amount) {
         level -= amount;
     }
 
-    public int getXp() {
+    public double getXp() {
         return xp;
     }
 
-    public void setXp(int xp) {
+    public void setXp(double xp) {
         this.xp = xp;
     }
 
@@ -65,7 +65,7 @@ public class LevelPlayer {
         this.xpToNextLevel = xpToNextLevel;
     }
 
-    public int getRemainingXp() {
+    public double getRemainingXp() {
         return xpToNextLevel - xp;
     }
 

@@ -32,8 +32,7 @@ public class LevelManager {
 
     public void addPlayerForFirstTime(Player player) {
         LevelPlayer levelPlayer = new LevelPlayer(player.getName());
-        levelPlayers.put(player.getName(), levelPlayer);
-        setNewXpLevel(player);
+        setNewXpLevel(levelPlayer);
 
         String path = "data." + player.getName();
 
@@ -73,18 +72,18 @@ public class LevelManager {
         levelPlayers.remove(player.getName());
     }
 
-    public void setNewXpLevel(Player player) {
-        LevelPlayer levelPlayer = levelPlayers.get(player.getName());
+    public void setNewXpLevel(LevelPlayer levelPlayer) {
 
         if (levelPlayer == null) {
             Bukkit.getLogger().log(Level.WARNING, "Tried to get information of a player that doesn't exist.");
             return;
         }
 
-        int xp = 1000 * levelPlayer.getLevel() + random
+        int xp = (1000 * levelPlayer.getLevel()/2) + random
                 .ints(config.getInt("exp.multiplier-min"), config.getInt("exp.multiplier-max")).findFirst().getAsInt();
 
         levelPlayer.setXpToNextLevel(xp);
+        levelPlayers.put(levelPlayer.getName(), levelPlayer);
     }
 
     public void updatePlayerLevel(Player player, double xp) {
@@ -94,8 +93,8 @@ public class LevelManager {
 
         if (levelPlayer.getXp() >= levelPlayer.getXpToNextLevel()) {
             levelPlayer.setXp(levelPlayer.getXp() - levelPlayer.getXpToNextLevel());
-            setNewXpLevel(player);
             levelPlayer.addLevel(1);
+            setNewXpLevel(levelPlayer);
 
             if (levelPlayer.getLevel() >= config.getInt("settings.max-level")) {
                 levelPlayer.removeLevel(1);
@@ -121,7 +120,7 @@ public class LevelManager {
         return levelPlayers.get(player.getName()).getLevel();
     }
 
-    public int getPlayerXp(Player player) {
+    public double getPlayerXp(Player player) {
         return levelPlayers.get(player.getName()).getXp();
     }
 
@@ -129,7 +128,7 @@ public class LevelManager {
         return levelPlayers.get(player.getName()).getXpToNextLevel();
     }
 
-    public int getPlayerRemainingXp(Player player) {
+    public double getPlayerRemainingXp(Player player) {
         return levelPlayers.get(player.getName()).getRemainingXp();
     }
 

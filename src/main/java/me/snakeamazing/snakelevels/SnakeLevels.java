@@ -2,12 +2,15 @@ package me.snakeamazing.snakelevels;
 
 import me.fixeddev.commandflow.annotated.AnnotatedCommandTreeBuilder;
 import me.fixeddev.commandflow.annotated.AnnotatedCommandTreeBuilderImpl;
+import me.fixeddev.commandflow.annotated.SubCommandInstanceCreator;
+import me.fixeddev.commandflow.annotated.builder.AnnotatedCommandBuilder;
 import me.fixeddev.commandflow.annotated.part.PartInjector;
 import me.fixeddev.commandflow.annotated.part.SimplePartInjector;
 import me.fixeddev.commandflow.annotated.part.defaults.DefaultsModule;
 import me.fixeddev.commandflow.bukkit.BukkitCommandManager;
 import me.fixeddev.commandflow.bukkit.factory.BukkitModule;
 import me.snakeamazing.snakelevels.commands.LevelCommand;
+import me.snakeamazing.snakelevels.commands.ReloadCommand;
 import me.snakeamazing.snakelevels.file.FileMatcher;
 import me.snakeamazing.snakelevels.handler.SettingsHandler;
 import me.snakeamazing.snakelevels.manager.LevelManager;
@@ -16,8 +19,6 @@ import me.snakeamazing.snakelevels.papi.PlaceholderAPIHook;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.logging.Level;
 
 public class SnakeLevels extends JavaPlugin {
 
@@ -35,7 +36,7 @@ public class SnakeLevels extends JavaPlugin {
 
         registerCommands();
         registerListeners(
-                new PlayerJoinListener(levelManager),
+                new PlayerJoinListener(levelManager, fileMatcher),
                 new PlayerQuitListener(levelManager),
                 new PlayerLevelUpListener(levelManager, fileMatcher),
                 new EntityDeathListener(levelManager, fileMatcher),
@@ -62,7 +63,18 @@ public class SnakeLevels extends JavaPlugin {
         partInjector.install(new DefaultsModule());
         partInjector.install(new BukkitModule());
 
-        AnnotatedCommandTreeBuilder treeBuilder = new AnnotatedCommandTreeBuilderImpl(partInjector);
+//        AnnotatedCommandBuilder builder = AnnotatedCommandBuilder.create(partInjector);
+//
+//        SubCommandInstanceCreator instanceCreator = (clazz, parent) -> {
+//            if (clazz == ReloadCommand.class) {
+//                return new ReloadCommand(fileMatcher);
+//            }
+//
+//            return null;
+//        };
+
+        AnnotatedCommandTreeBuilder treeBuilder = AnnotatedCommandTreeBuilder.create(partInjector);
+
         BukkitCommandManager commandManager = new BukkitCommandManager(this.getName());
 
         commandManager.registerCommands(treeBuilder.fromClass(new LevelCommand(levelManager, fileMatcher)));
