@@ -24,7 +24,7 @@ public class PlayerJoinListener implements Listener {
     public void onPlayerJoinEvent(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        if (!data.contains(player.getName())) {
+        if (!data.contains("data." + player.getName())) {
             levelManager.addPlayerForFirstTime(player);
         }
 
