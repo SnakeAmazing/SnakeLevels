@@ -1,1 +1,1 @@
-A simple level plugin made for Obsilion Network, my server :)
+A simple player level plugin made for Obsilion Network, my server :)
