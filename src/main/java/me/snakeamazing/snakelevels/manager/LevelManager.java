@@ -96,7 +96,7 @@ public class LevelManager {
             levelPlayer.addLevel(1);
             setNewXpLevel(levelPlayer);
 
-            if (levelPlayer.getLevel() >= config.getInt("settings.max-level")) {
+            if (levelPlayer.getLevel() > config.getInt("settings.max-level")) {
                 levelPlayer.removeLevel(1);
                 player.sendMessage(messages.getString("messages.level-up.max-level"));
                 return;

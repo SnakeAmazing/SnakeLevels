@@ -17,6 +17,7 @@ import me.snakeamazing.snakelevels.manager.LevelManager;
 import me.snakeamazing.snakelevels.listeners.*;
 import me.snakeamazing.snakelevels.papi.PlaceholderAPIHook;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -49,7 +50,9 @@ public class SnakeLevels extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            levelManager.removeLevelPlayer(player);
+        }
     }
 
     private void registerListeners(Listener... listeners) {
