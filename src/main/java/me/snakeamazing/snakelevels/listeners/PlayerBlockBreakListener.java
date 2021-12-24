@@ -34,11 +34,11 @@ public class PlayerBlockBreakListener implements Listener {
         Block block = event.getBlock();
         Player player = event.getPlayer();
 
-        if (!settingsHandler.getMaterials().contains(block.getType())) {
+        if (!config.contains("settings.material." + block.getType())) {
             return;
         }
 
-        levelManager.updatePlayerLevel(player, levelManager.getPlayerMultiplier(player) * config.getInt("settings.mining-xp"));
+        levelManager.updatePlayerLevel(player, levelManager.getPlayerMultiplier(player) * config.getInt("settings.material." + block.getType()));
 
         BaseComponent baseComponent = new TextComponent(
                 messages.getString("messages.level-update")

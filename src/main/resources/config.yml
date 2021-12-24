@@ -1,17 +1,42 @@
 settings:
   max-level: 25
   material:
-    - COAL_ORE
-    - IRON_ORE
-    - GOLD_ORE
-    - EMERALD_ORE
-    - DIAMOND_ORE
-    - STONE
-    - ANCIENT_DEBRIS
+    COAL_ORE: 1
+    IRON_ORE: 1
+    GOLD_ORE: 1
+    EMERALD_ORE: 1
+    DIAMOND_ORE: 1
+    STONE: 1
+    ANCIENT_DEBRIS: 1
 
-  killing-xp: 3
-  fishing-xp: 5
-  mining-xp: 1
+  entities:
+    default: 1
+    zombie: 1
+    skeleton: 1
+    enderman: 1
+    creeper: 1
+    pìllager: 1
+    silverfish: 1
+    drowned-zombie: 1
+    blaze: 1
+    cave-spider: 1
+    spider: 1
+    ghast: 1
+    guardian: 1
+    hoglin: 1
+    magma-cube: 1
+    piglin: 1
+    ravager: 1
+    shulker: 1
+    slime: 1
+    ender-dragon: 1
+    stray: 1
+    zoglin: 1
+    wither-skeleton: 1
+    witch: 1
+    vindicator: 1
+
+  fishing-xp: 0
 
 exp:
   multiplier-min: 100
