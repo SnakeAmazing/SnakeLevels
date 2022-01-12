@@ -10,6 +10,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
@@ -29,7 +30,7 @@ public class PlayerBlockBreakListener implements Listener {
         this.levelManager = levelManager;
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerBreakEvent(BlockBreakEvent event) {
         Block block = event.getBlock();
         Player player = event.getPlayer();
