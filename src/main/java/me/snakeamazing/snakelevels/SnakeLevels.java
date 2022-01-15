@@ -42,7 +42,8 @@ public class SnakeLevels extends JavaPlugin {
                 new PlayerLevelUpListener(levelManager, fileMatcher),
                 new EntityDeathListener(levelManager, fileMatcher),
                 new PlayerBlockBreakListener(fileMatcher, settingsHandler, levelManager),
-                new PlayerFishListener(levelManager, fileMatcher)
+                new PlayerFishListener(levelManager, fileMatcher),
+                new BlockPlaceListener(fileMatcher, settingsHandler, levelManager)
         );
 
         hookWithPlaceholderAPI();
