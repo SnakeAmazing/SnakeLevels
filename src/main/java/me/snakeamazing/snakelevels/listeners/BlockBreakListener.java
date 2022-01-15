@@ -14,7 +14,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
-public class PlayerBlockBreakListener implements Listener {
+public class BlockBreakListener implements Listener {
 
     private final YAMLFile config;
     private final YAMLFile messages;
@@ -22,7 +22,7 @@ public class PlayerBlockBreakListener implements Listener {
     private final SettingsHandler settingsHandler;
     private final LevelManager levelManager;
 
-    public PlayerBlockBreakListener(FileMatcher matcher, SettingsHandler settingsHandler, LevelManager levelManager) {
+    public BlockBreakListener(FileMatcher matcher, SettingsHandler settingsHandler, LevelManager levelManager) {
         this.config = matcher.getFile("config");
         this.messages = matcher.getFile("messages");
 
@@ -35,11 +35,14 @@ public class PlayerBlockBreakListener implements Listener {
         Block block = event.getBlock();
         Player player = event.getPlayer();
 
-        if (!settingsHandler.getMaterials().contains(block.getType())) {
+        if (event.isCancelled()) {
             return;
         }
 
-        levelManager.updatePlayerLevel(player, levelManager.getPlayerMultiplier(player) * config.getInt("settings.material." + block.getType()));
+        if (!config.contains("settings.material." + block.getType()))
+            return;
+
+        levelManager.updatePlayerLevel(player, levelManager.getPlayerMultiplier(player) * config.getDouble("settings.material." + block.getType()));
 
         BaseComponent baseComponent = new TextComponent(
                 messages.getString("messages.level-update")

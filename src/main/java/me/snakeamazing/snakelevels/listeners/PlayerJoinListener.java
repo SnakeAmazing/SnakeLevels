@@ -33,13 +33,12 @@ public class PlayerJoinListener implements Listener {
 
         levelManager.addLevelPlayer(player);
 
-
-        for (String string : rewards.getStringList("new-rewards")) {
+        for (String string : rewards.getConfigurationSection("new-rewards").getKeys(false)) {
             if (levelManager.getPlayerLevel(player) < Integer.parseInt(string)) {
                 return;
             }
 
-            for (String reward : rewards.getStringList("new-wards." + string)) {
+            for (String reward : rewards.getStringList("new-rewards." + string)) {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), reward.replace("%player%", player.getName()));
             }
         }
