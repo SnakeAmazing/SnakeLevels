@@ -12,6 +12,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 
+import java.util.Locale;
+
 public class EntityDeathListener implements Listener {
 
     private final LevelManager levelManager;
@@ -35,10 +37,10 @@ public class EntityDeathListener implements Listener {
             return;
         }
 
-        String path = "entities." + entity.getType();
+        String path = "settings.entities." + entity.getType().toString().toLowerCase(Locale.ROOT);
 
         if (config.contains(path)) {
-            path = "entities.default";
+            path = "settings.entities.default";
         }
 
         levelManager.updatePlayerLevel(player, levelManager.getPlayerMultiplier(player) * config.getInt(path));
