@@ -40,7 +40,7 @@ public class PlayerJoinListener implements Listener {
             }
 
             for (String reward : rewards.getStringList("new-wards." + string)) {
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), reward);
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), reward.replace("%player%", player.getName()));
             }
         }
     }

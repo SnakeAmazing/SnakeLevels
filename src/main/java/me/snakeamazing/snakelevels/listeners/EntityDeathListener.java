@@ -35,7 +35,13 @@ public class EntityDeathListener implements Listener {
             return;
         }
 
-        levelManager.updatePlayerLevel(player, levelManager.getPlayerMultiplier(player) * config.getDouble("settings.killing-xp"));
+        String path = "entities." + entity.getType();
+
+        if (config.contains(path)) {
+            path = "entities.default";
+        }
+
+        levelManager.updatePlayerLevel(player, levelManager.getPlayerMultiplier(player) * config.getInt(path));
 
         BaseComponent baseComponent = new TextComponent(
                 messages.getString("messages.level-update")

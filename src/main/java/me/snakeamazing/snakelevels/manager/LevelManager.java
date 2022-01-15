@@ -79,10 +79,8 @@ public class LevelManager {
             return;
         }
 
-        int xp = (1000 * levelPlayer.getLevel()/2) + random
-                .ints(config.getInt("exp.multiplier-min"), config.getInt("exp.multiplier-max")).findFirst().getAsInt();
-
-        levelPlayer.setXpToNextLevel(xp);
+        int playerLevel = config.getInt("exp.level." + levelPlayer.getLevel());
+        levelPlayer.setXpToNextLevel(playerLevel);
         levelPlayers.put(levelPlayer.getName(), levelPlayer);
     }
 
