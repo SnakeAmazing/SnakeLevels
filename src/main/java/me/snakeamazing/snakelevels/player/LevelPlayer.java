@@ -54,11 +54,7 @@ public class LevelPlayer {
     }
 
     public void addXp(double amount) {
-        if (this.xp + amount <= 0) {
-            this.xp = 0;
-        } else {
-            this.xp += amount;
-        }
+        this.xp += amount;
     }
 
     public int getXpToNextLevel() {
