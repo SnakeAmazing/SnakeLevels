@@ -1,5 +1,13 @@
 package me.snakeamazing.snakelevels.listeners;
 
+import com.sk89q.worldguard.LocalPlayer;
+import com.sk89q.worldguard.WorldGuard;
+import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
+import com.sk89q.worldguard.protection.ApplicableRegionSet;
+import com.sk89q.worldguard.protection.flags.Flags;
+import com.sk89q.worldguard.protection.regions.ProtectedRegion;
+import com.sk89q.worldguard.protection.regions.RegionContainer;
+import com.sk89q.worldguard.protection.regions.RegionQuery;
 import me.snakeamazing.snakelevels.file.FileMatcher;
 import me.snakeamazing.snakelevels.file.YAMLFile;
 import me.snakeamazing.snakelevels.handler.SettingsHandler;
@@ -35,8 +43,20 @@ public class BlockBreakListener implements Listener {
         Block block = event.getBlock();
         Player player = event.getPlayer();
 
-        if (event.isCancelled()) {
+        LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
+        RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+        RegionQuery query = container.createQuery();
+
+        if (!query.testState(localPlayer.getLocation(), localPlayer, Flags.BUILD)) {
             return;
+        }
+
+        ApplicableRegionSet regions = query.getApplicableRegions(localPlayer.getLocation());
+
+        for (ProtectedRegion region : regions) {
+            if (!region.getId().equals("__global__")) {
+                return;
+            }
         }
 
         if (!config.contains("settings.material." + block.getType()))
