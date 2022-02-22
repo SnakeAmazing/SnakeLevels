@@ -87,6 +87,12 @@ public class LevelManager {
     public void updatePlayerLevel(Player player, double xp) {
         LevelPlayer levelPlayer = levelPlayers.get(player.getName());
 
+        if (levelPlayer.getLevel() > config.getInt("settings.max-level")) {
+            levelPlayer.removeLevel(1);
+            player.sendMessage(messages.getString("messages.level-up.max-level"));
+            return;
+        }
+
         levelPlayer.addXp(xp);
 
         if (levelPlayer.getXp() >= levelPlayer.getXpToNextLevel()) {
@@ -94,11 +100,6 @@ public class LevelManager {
             levelPlayer.addLevel(1);
             setNewXpLevel(levelPlayer);
 
-            if (levelPlayer.getLevel() > config.getInt("settings.max-level")) {
-                levelPlayer.removeLevel(1);
-                player.sendMessage(messages.getString("messages.level-up.max-level"));
-                return;
-            }
             sendLevelUpMessage(player, levelPlayer.getLevel());
             Bukkit.getServer().getPluginManager().callEvent(new PlayerLevelUpEvent(player));
         }
