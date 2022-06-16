@@ -50,11 +50,15 @@ public class BlockBreakListener implements Listener {
         if (!query.testState(localPlayer.getLocation(), localPlayer, Flags.BUILD)) {
             return;
         }
+        
+        if (!query.testState(localPlayer.getLocation(), localPlayer, Flags.BLOCK_BREAK)) {
+            return;
+        }
 
         ApplicableRegionSet regions = query.getApplicableRegions(localPlayer.getLocation());
 
         for (ProtectedRegion region : regions) {
-            if (!region.getId().equals("__global__")) {
+            if (!region.getId().contains("global")) {
                 return;
             }
         }
