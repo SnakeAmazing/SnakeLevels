@@ -1,44 +1,264 @@
 messages:
   commands:
     help:
-      - "&7"
-      - "         &e&lSNAKE LEVELS"
-      - " &7· &f/snakelevels give <player> <amount>"
-      - " &7· &f/snakelevels remove <player> <amount>"
-      - " &7· &f/snakelevels reset <player>"
-      - "&7"
+      - '&7'
+      - '         &e&lSNAKE LEVELS'
+      - ' &7· &f/snakelevels give <player> <amount>'
+      - ' &7· &f/snakelevels remove <player> <amount>'
+      - ' &7· &f/snakelevels reset <player>'
+      - '&7'
     give:
-      sender: "&e&lNIVELES &7» &aHas dado a &6%target% &e%amount% &apuntos."
-      target: "&e&lNIVELES &7» &aHas recibido &e%amount% &apuntos."
+      sender: '&e&lNIVELES &7» &aHas dado a &6%target% &e%amount% &apuntos.'
+      target: '&e&lNIVELES &7» &aHas recibido &e%amount% &apuntos.'
     remove:
-      sender: "&e&lNIVELES &7» &aHas quitado a &6%target% &e%amount% &apuntos."
-      target: "&e&lNIVELES &7» &aTe han quitado &e%amount% &apuntos."
+      sender: '&e&lNIVELES &7» &aHas quitado a &6%target% &e%amount% &apuntos.'
+      target: '&e&lNIVELES &7» &aTe han quitado &e%amount% &apuntos.'
     set:
-      sender: "&e&lNIVELES &7» &aHas establecido el nivel de &6%target% a &e%level%&a."
-      target: "&e&lNIVELES &7» &aTe han establecido el nivel a &e%level%&a."
-
-
-  level-update: "&e&lNIVELES &7» &b%xp%&7/&b%next-level-xp%"
+      sender: '&e&lNIVELES &7» &aHas establecido el nivel de &6%target% a &e%level%&a.'
+      target: '&e&lNIVELES &7» &aTe han establecido el nivel a &e%level%&a.'
+  level-update: '&e&lNIVELES &7» &b%xp%&7/&b%next-level-xp%'
   level-up:
-    max-level: "&e&lNIVELES &7» &c¡Has llegado al nivel máximo!"
+    max-level: '&e&lNIVELES &7» &c¡Has llegado al nivel máximo!'
     level-1:
-      - "&7"
-      - "&e&l             NIVELES"
-      - "&f    ¡Feliciades! Has subido de nivel."
-      - ""
-      - "  &fNuevo nivel: &a1"
-      - "   &e➥ &e"
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $100.'
+      - ''
+      - '&e&m--------------------------------------------'
     level-2:
-      - "&7"
-      - "&e&l             NIVELES"
-      - "&f    ¡Feliciades! Has subido de nivel."
-      - ""
-      - "  &fNuevo nivel: &a2"
-      - "   &e➥ &e"
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $300.'
+      - ''
+      - '&e&m--------------------------------------------'
     level-3:
-      - "&7"
-      - "&e&l             NIVELES"
-      - "&f    ¡Feliciades! Has subido de nivel."
-      - ""
-      - "  &fNuevo nivel: &a3"
-      - "   &e➥ &e"
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $250.'
+      - '&e🔥 &eDesbloqueas el &cNether&e.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-4:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $1000.'
+      - '&a✔ &eRecibes &7Llave &e&lVOTE'
+      - '&a✔ &eRecibes &7Llave &b&lCOMPUESTA'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-5:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $1000.'
+      - '&e🔥 &eDesbloqueas la &aTienda exclusiva&e.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-6:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $1500.'
+      - '&e🔥 &eDesbloqueas los &bClanes.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-7:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $1500.'
+      - '&e🔥 &eDesbloqueas el &5End&e.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-8:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $2500.'
+      - '&a✔ &eRecibes 3x &7Llave &e&lVOTE'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-9:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $2000.'
+      - '&a✔ &eRecibes 3x &7Llave &b&lCOMPUESTA'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-10:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $3000.'
+      - '&a✔ &eRecibes &7Llave &d&lSINGULARIDAD'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-11:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $3500.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-12:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $4000.'
+      - '&a✔ &eRecibes 4x &7Llave &b&lCOMPUESTA'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-13:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $2500.'
+      - '&a✔ &eRecibes 5x &7Llave &e&lVOTE'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-14:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $4500.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-15:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $5000.'
+      - '&a✔ &eRecibes &7Llave &d&lSINGULARIDAD'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-16:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $4000.'
+      - '&a✔ &eRecibes 5x &7Llave &b&lCOMPUESTA'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-17:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $5500.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-18:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $5000.'
+      - '&a✔ &eRecibes &7Llave &d&lSINGULARIDAD'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-19:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $6500.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-20:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes &7Llave &d&lSINGULARIDAD'
+      - '&e🔥 &eDesbloqueas la tag: &5&k:&6ᴏ&bɢ&5&k:&e.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-21:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $6000.'
+      - '&a✔ 5x &eRecibes &7Llave &e&lVOTE'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-22:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $7000.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-23:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $7000.'
+      - '&a✔ &eRecibes &7Llave &d&lSINGULARIDAD'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-24:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $10000.'
+      - ''
+      - '&e&m--------------------------------------------'
+    level-25:
+      - '&e&m------------------------------------------'
+      - '&a&l         ¡HAS SUBIDO DE NIVEL!         '
+      - '&f    Has alcanzado un nuevo &bnivel&f y has '
+      - '&f      conseguido las siguientes &6Recompensas&f:'
+      - ''
+      - '&a✔ &eRecibes $15000.'
+      - '&a✔ &eRecibes 2x &7Llave &d&lSINGULARIDAD'
+      - ''
+      - '&e&m--------------------------------------------'

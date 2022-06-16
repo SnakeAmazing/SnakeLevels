@@ -4,6 +4,7 @@ import me.snakeamazing.snakelevels.file.FileMatcher;
 import me.snakeamazing.snakelevels.file.YAMLFile;
 import me.snakeamazing.snakelevels.manager.LevelManager;
 import me.snakeamazing.snakelevels.player.LevelPlayer;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,11 +14,13 @@ public class PlayerJoinListener implements Listener {
 
     private final LevelManager levelManager;
     private final YAMLFile data;
+    private final YAMLFile rewards;
 
     public PlayerJoinListener(LevelManager levelManager, FileMatcher matcher) {
         this.levelManager = levelManager;
 
         this.data = matcher.getFile("data");
+        this.rewards = matcher.getFile("rewards");
     }
 
     @EventHandler
@@ -30,5 +33,14 @@ public class PlayerJoinListener implements Listener {
 
         levelManager.addLevelPlayer(player);
 
+        for (String string : rewards.getConfigurationSection("new-rewards").getKeys(false)) {
+            if (levelManager.getPlayerLevel(player) < Integer.parseInt(string)) {
+                return;
+            }
+
+            for (String reward : rewards.getStringList("new-rewards." + string)) {
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), reward.replace("%player%", player.getName()));
+            }
+        }
     }
 }

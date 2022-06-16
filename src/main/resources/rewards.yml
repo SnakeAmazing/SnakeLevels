@@ -1,76 +1,114 @@
-1:
+'1':
   commands:
+    - eco give %player% 100
+'2':
+  commands:
+    - eco give %player% 300
+'3':
+  commands:
+    - eco give %player% 250
+    - lp user %player% permission set simpleportals.portal.nether_portal server=survival
+'4':
+  commands:
+    - eco give %player% 1000
+    - crates givekey %player% compuesta 1
+    - crates givekey %player% vote 1
+'5':
+  commands:
+    - eco give %player% 1000
+    - lp user %player% permission set shopguiplus.shops.objetosexclusivos server=survival
+'6':
+  commands:
+    - eco give %player% 1500
+    - lp user %player% permission set uclans.player.create server=survival
+    - lp user %player% permission set uclans.player.changeleader server=survival
+    - lp user %player% permission set uclans.player.desc server=survival
+    - lp user %player% permission set uclans.player.disband server=survival
+    - lp user %player% permission set uclans.player.kick server=survival
+    - lp user %player% permission set uclans.player.leave server=survival
+    - lp user %player% permission set uclans.player.promote server=survival
+    - lp user %player% permission set uclans.player.ally server=survival
+    - lp user %player% permission set uclans.player.rivalries server=survival
+    - lp user %player% permission set uclans.player.chat server=survival
+    - lp user %player% permission set uclans.player.settings server=survival
+    - lp user %player% permission set uclans.player.invite server=survival
+    - lp user %player% permission set uclans.player.join server=survival
+    - lp user %player% permission set uclans.player.demote server=survival
+    - lp user %player% permission set uclans.player.rival server=survival
+'7':
+  commands:
+    - eco give %player% 1500
+    - lp user %player% permission set essentials.warps.end2 server=survival
+    - lp user %player% permission set simpleportals.portal.end_portal server=survival
+    - lp user %player% permission set simpleportals.portal.end_city server=survival
+'8':
+  commands:
+    - eco give %player% 2500
+    - crates givekey %player% vote 3
+'9':
+  commands:
+    - eco give %player% 2000
+    - crates givekey %player% compuesta 3
+'10':
+  commands:
+    - eco give %player% 3000
+    - crates givekey %player% singularidad 1
+'11':
+  commands:
+    - eco give %player% 3500
+'12':
+  commands:
+    - eco give %player% 4000
+    - crates givekey %player% compuesta 4
+'13':
+  commands:
+    - eco give %player% 2500
+    - crates givekey %player% vote 5
+'14':
+  commands:
+    - eco give %player% 4500
+'15':
+  commands:
+    - eco give %player% 5000
+    - crates givekey %player% singularidad 1
+'16':
+  commands:
+    - eco give %player% 4000
+    - crates givekey %player% compuesta 5
+'17':
+  commands:
+    - eco give %player% 5500
+'18':
+  commands:
+    - eco give %player% 5000
+    - crates givekey %player% singularidad 1
+'19':
+  commands:
+    - eco give %player% 6500
+'20':
+  commands:
+    - crates givekey %player% singularidad 1
+    - lp user %player% permission set tags.og
+'21':
+  commands:
+    - eco give %player% 6000
+    - crates givekey %player% vote 5
+'22':
+  commands:
+    - eco give %player% 7000
+'23':
+  commands:
+    - eco give %player% 7000
+    - crates givekey %player% singularidad 1
+'24':
+  commands:
+    - eco give %player% 10000
+'25':
+  commands:
+    - eco give %player% 15000
+    - crates givekey %player% singularidad 2
+
+
+new-rewards:
+  1:
     - "eco give %player% 1000"
-2:
-  commands:
-    - "eco give %player% 1000"
-3:
-  commands:
-    - "eco give %player% 1000"
-    - "lp user %player% permission set simpleportals.portal.nether_portal server=survival"
-4:
-  commands:
-    - "eco give %player% 1000"
-5:
-  commands:
-    - "eco give %player% 5000"
-6:
-  commands:
-    - "eco give %player% 1000"
-7:
-  commands:
-    - "eco give %player% 1000"
-8:
-  commands:
-    - "eco give %player% 1000"
-9:
-  commands:
-    - "eco give %player% 1000"
-10:
-  commands:
-    - "eco give %player% 5000"
-11:
-  commands:
-    - "eco give %player% 1000"
-12:
-  commands:
-    - "eco give %player% 1000"
-13:
-  commands:
-    - "eco give %player% 1000"
-14:
-  commands:
-    - "eco give %player% 1000"
-15:
-  commands:
-    - "eco give %player% 5000"
-16:
-  commands:
-    - "eco give %player% 1000"
-17:
-  commands:
-    - "eco give %player% 1000"
-18:
-  commands:
-    - "eco give %player% 1000"
-19:
-  commands:
-    - "eco give %player% 1000"
-20:
-  commands:
-    - "eco give %player% 5000"
-21:
-  commands:
-    - "eco give %player% 1000"
-22:
-  commands:
-    - "eco give %player% 1000"
-23:
-  commands:
-    - "eco give %player% 1000"
-24:
-  commands:
-    - "eco give %player% 1000"
-25:
-  commands:
-    - "eco give %player% 5000"

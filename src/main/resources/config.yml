@@ -1,43 +1,73 @@
 settings:
   max-level: 25
   material:
-    COAL_ORE: 1
-    IRON_ORE: 1
-    GOLD_ORE: 1
-    EMERALD_ORE: 1
-    DIAMOND_ORE: 1
-    STONE: 1
-    ANCIENT_DEBRIS: 1
-
+    COAL_ORE: 5
+    IRON_ORE: 8
+    GOLD_ORE: 10
+    EMERALD_ORE: 25
+    DIAMOND_ORE: 20
+    STONE: 1.5
+    ANCIENT_DEBRIS: 30
+    NETHERRACK: 0.5
+    OAK_LOG: 5
+    SPRUCE_LOG: 5
+    BIRCH_LOG: 5
+    JUNGLE_LOG: 5
+    ACACIA_LOG: 5
+    DARK_OAK_LOG: 5
   entities:
     default: 1
-    zombie: 1
-    skeleton: 1
-    enderman: 1
-    creeper: 1
-    pìllager: 1
-    silverfish: 1
-    drowned-zombie: 1
-    blaze: 1
-    cave-spider: 1
-    spider: 1
-    ghast: 1
-    guardian: 1
-    hoglin: 1
-    magma-cube: 1
-    piglin: 1
-    ravager: 1
-    shulker: 1
-    slime: 1
-    ender-dragon: 1
-    stray: 1
-    zoglin: 1
-    wither-skeleton: 1
-    witch: 1
-    vindicator: 1
-
+    zombie: 5
+    skeleton: 5
+    enderman: 5
+    creeper: 10
+    pillager: 10
+    silverfish: 3
+    drowned-zombie: 5
+    blaze: 8
+    cave-spider: 3
+    spider: 3
+    ghast: 50
+    guardian: 10
+    hoglin: 15
+    magma-cube: 10
+    piglin: 15
+    ravager: 15
+    shulker: 15
+    slime: 10
+    ender-dragon: 1000
+    stray: 5
+    zoglin: 10
+    wither-skeleton: 15
+    witch: 15
+    vindicator: 25
   fishing-xp: 0
 
 exp:
-  multiplier-min: 100
-  multiplier-max: 200
+  level:
+    1: 1000
+    2: 2000
+    3: 3000
+    4: 4000
+    5: 5000
+    6: 6000
+    7: 7000
+    8: 8000
+    9: 9000
+    10: 10000
+    11: 11000
+    12: 12000
+    13: 13000
+    14: 14000
+    15: 15000
+    16: 16000
+    17: 17000
+    18: 18000
+    19: 19000
+    20: 20000
+    21: 21000
+    22: 22000
+    23: 23000
+    24: 24000
+    25: 25000
+

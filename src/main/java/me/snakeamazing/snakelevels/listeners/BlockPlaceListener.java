@@ -11,40 +11,36 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 
-public class PlayerBlockBreakListener implements Listener {
-
+public class BlockPlaceListener implements Listener {
     private final YAMLFile config;
+
     private final YAMLFile messages;
 
     private final SettingsHandler settingsHandler;
+
     private final LevelManager levelManager;
 
-    public PlayerBlockBreakListener(FileMatcher matcher, SettingsHandler settingsHandler, LevelManager levelManager) {
+    public BlockPlaceListener(FileMatcher matcher, SettingsHandler settingsHandler, LevelManager levelManager) {
         this.config = matcher.getFile("config");
         this.messages = matcher.getFile("messages");
-
         this.settingsHandler = settingsHandler;
         this.levelManager = levelManager;
     }
 
+
     @EventHandler
-    public void onPlayerBreakEvent(BlockBreakEvent event) {
+    public void onBlockPlaceListener(BlockPlaceEvent event) {
         Block block = event.getBlock();
         Player player = event.getPlayer();
 
-        if (!config.contains("settings.material." + block.getType())) {
+        if (!config.contains("settings.material." + block.getType()))
             return;
-        }
 
-        levelManager.updatePlayerLevel(player, levelManager.getPlayerMultiplier(player) * config.getInt("settings.material." + block.getType()));
-
-        BaseComponent baseComponent = new TextComponent(
-                messages.getString("messages.level-update")
-                        .replace("%xp%", String.valueOf(levelManager.getPlayerXp(player)))
-                        .replace("%next-level-xp%", String.valueOf(levelManager.getPlayerXpToNextLevel(player))));
-
-        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, baseComponent);
+        levelManager.updatePlayerLevel(player, -1 * levelManager.getPlayerMultiplier(player) * config.getInt("settings.material." + block.getType()));
+        TextComponent textComponent = new TextComponent(messages.getString("messages.level-update")
+                .replace("%xp%", String.valueOf(levelManager.getPlayerXp(player))).replace("%next-level-xp%", String.valueOf(levelManager.getPlayerXpToNextLevel(player))));
+        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, textComponent);
     }
 }

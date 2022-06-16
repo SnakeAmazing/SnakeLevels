@@ -1,16 +1,12 @@
 package me.snakeamazing.snakelevels;
 
 import me.fixeddev.commandflow.annotated.AnnotatedCommandTreeBuilder;
-import me.fixeddev.commandflow.annotated.AnnotatedCommandTreeBuilderImpl;
-import me.fixeddev.commandflow.annotated.SubCommandInstanceCreator;
-import me.fixeddev.commandflow.annotated.builder.AnnotatedCommandBuilder;
 import me.fixeddev.commandflow.annotated.part.PartInjector;
 import me.fixeddev.commandflow.annotated.part.SimplePartInjector;
 import me.fixeddev.commandflow.annotated.part.defaults.DefaultsModule;
 import me.fixeddev.commandflow.bukkit.BukkitCommandManager;
 import me.fixeddev.commandflow.bukkit.factory.BukkitModule;
 import me.snakeamazing.snakelevels.commands.LevelCommand;
-import me.snakeamazing.snakelevels.commands.ReloadCommand;
 import me.snakeamazing.snakelevels.file.FileMatcher;
 import me.snakeamazing.snakelevels.handler.SettingsHandler;
 import me.snakeamazing.snakelevels.manager.LevelManager;
@@ -41,8 +37,9 @@ public class SnakeLevels extends JavaPlugin {
                 new PlayerQuitListener(levelManager),
                 new PlayerLevelUpListener(levelManager, fileMatcher),
                 new EntityDeathListener(levelManager, fileMatcher),
-                new PlayerBlockBreakListener(fileMatcher, settingsHandler, levelManager),
-                new PlayerFishListener(levelManager, fileMatcher)
+                new BlockBreakListener(fileMatcher, settingsHandler, levelManager),
+                new PlayerFishListener(levelManager, fileMatcher),
+                new BlockPlaceListener(fileMatcher, settingsHandler, levelManager)
         );
 
         hookWithPlaceholderAPI();
